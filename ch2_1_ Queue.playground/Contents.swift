@@ -16,7 +16,7 @@ while queue.head < queue.tail {
     queue.head += 1
     
     //head 已经移到 tail 位置则中止
-    if queue.head >= queue.tail {
+    guard queue.head < queue.tail else {
         break
     }
     
