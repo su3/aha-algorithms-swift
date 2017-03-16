@@ -1,25 +1,29 @@
 //: Playground - noun: a place where people can play
 
-var queue = [6, 3, 1, 7, 5, 8, 9, 2, 4]
-var head = 0    //开始的时候指向队首
-var tail = queue.count    //tail 标示队尾的下一个位置
+struct Queue{
+    var data: [Int] //存储队列数据
+    var head: Int //开始的时候指向队首
+    var tail: Int //tail 标示队尾的下一个位置
+}
+
+var queue = Queue(data: [6, 3, 1, 7, 5, 8, 9, 2, 4], head: 0 , tail: 9)
 
 //当队列不为空时执行循环
-while head < tail {
+while queue.head < queue.tail {
 //    print("\(queue[head])", term)
     //打印队首并将队首出列
-    print("\(queue[head])", separator: " ", terminator: " ")
-    head += 1
+    print("\(queue.data[queue.head])", separator: " ", terminator: " ")
+    queue.head += 1
     
     //head 已经移到 tail 位置则中止
-    if head >= tail {
+    if queue.head >= queue.tail {
         break
     }
     
     //先将新队首的数添加到队尾
-    queue.append(queue[head])
-    tail += 1
+    queue.data.append(queue.data[queue.head])
+    queue.tail += 1
     
     //新队首出列
-    head += 1
+    queue.head += 1
 }
