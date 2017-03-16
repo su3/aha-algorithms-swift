@@ -2,7 +2,7 @@
 
 var array = [3, 1, 2, 5, 4, 6, 9, 7, 10, 8]
 
-func quicksort( left: Int, right: Int){
+func quicksort(left: Int, right: Int){
     var i: Int, j: Int, temp: Int
     
     if left > right {
