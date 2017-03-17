@@ -15,10 +15,8 @@ while queue.head < queue.tail {
     print("\(queue.data[queue.head])", separator: " ", terminator: " ")
     queue.head += 1
     
-    //head 已经移到 tail 位置则中止
-    guard queue.head < queue.tail else {
-        break
-    }
+    //head 已经移到 tail 位置则中止 （书中的 bug，head 会越界）
+    guard queue.head < queue.tail else { break }
     
     //先将新队首的数添加到队尾
     queue.data.append(queue.data[queue.head])
