@@ -27,7 +27,6 @@ var book = [[Int]](repeatElement(tmp, count: 50))
 
 func dfs(x: Int, y: Int, color: Int){
     a[x][y] = color
-    
 
     for k in 0...3 {
         let tx = x + next[k][0]
@@ -43,8 +42,6 @@ func dfs(x: Int, y: Int, color: Int){
             dfs(x: tx, y: ty, color: color) //尝试下一个点
         }
     }
-    
-    
 }
 
 var sum = 0
